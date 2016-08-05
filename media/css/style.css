@@ -65,6 +65,7 @@ h2, h2 a{
 	float: right;
 	text-decoration: none;
 	color: #ffffff;
+	/*right:11%;*/
 
 }
 
@@ -74,7 +75,7 @@ a {
 
 p{
 	/*font-size: 2.1em;*/
-	font-size: calc(.8em + 1vw);
+	font-size: calc(1em + 1vw);
   	line-height: calc(1.2em + 1vw);
     /*line-height: 2.4;*/
     margin-bottom: 50px;
@@ -198,11 +199,53 @@ h1, h2, p {
 }
 
 .top-img {
-	width:100px;
-	height:100px;
-    -moz-box-shadow: 0 0 5px #fff;
-	-webkit-box-shadow: 0 0 5px #fff;
-	box-shadow: 0px 0px 5px #fff;
+background: transparent;
+}
+
+.pulse {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 8px 49px 13px rgba(89,122,24,1);
+	-moz-box-shadow: 2px 8px 49px 13px rgba(89,122,24,1);
+	box-shadow: 2px 8px 49px 13px rgba(89,122,24,1);
+    animation: pulse 5s infinite;
+    position: relative;	
+    top: 106px;
+    z-index: -1
+}
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(2,122,24, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(2,122,24, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(2,122,24, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(2,122,24, 0.4);
+    box-shadow: 0 0 0 0 rgba(2,122,24, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(2,122,24, 0);
+      box-shadow: 0 0 0 10px rgba(2,122,24, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(2,122,24, 0);
+      box-shadow: 0 0 0 0 rgba(2,122,24, 0);
+  }
 }
 
 .fade {
@@ -212,7 +255,7 @@ h1, h2, p {
 .inner {
 	position: relative;
 	height:100%;
-	width:80%;
+	width:66%;
 	margin:0 auto;
 }
 .home {
@@ -360,22 +403,56 @@ h1, h2, p {
 	z-index: 10;
 }
 
+@media(max-width: 1136px) {
+	.centered-img {
+		left: 0;
+		max-width: 100%;
+	}
+	.top-right-img {
+		right: -50px;
+		background-size: cover;
+		width: 70%;
+	}
+	.arrow-down {
+		top: 50%;
+	}
+}
+
 @media(max-width: 960px) {
 	.centered-img {
 		left: 0;
 		max-width: 100%;
 	}
+	.arrow-down {
+		top: 50%;
+	}
 }
 
-@media (max-width:800px) {
-	/*h1 {
-		font-size:15vw;
+@media (max-width:768px) {
+	.pagination {
+		display: none;
 	}
-	h2 {
-		font-size:12vw;
-	}*/
-	.inner {
+	/*.inner {
 		width:70%;
 
+	}*/
+	.arrow {
+		float:none;
+	}
+}
+
+@media (max-width:414px) {
+	h2 {
+		width: 100%;
+	}
+	.break {
+		display: none;
+	}
+
+	.logo-img {
+		width: 50px;
+	    top: 20px;
+	    left: 20px;
+	    position: fixed;
 	}
 }
