@@ -45,13 +45,18 @@ table {
 
 /* main */
 
+html {
+	font-size: 15px;
+}
+
 body {
 	color:white;
 	font-size:62.5%;
 	font-family: 'Open Sans', sans-serif;
 }
 h1 {
-	font-size:5.6em;
+	font-size: calc(4.2em + 1vw);
+    line-height: calc(1.2em + 1vw);
 	margin-bottom:20px
 
 }
@@ -63,8 +68,10 @@ h2, h2 a{
 
 }
 p{
-	font-size: 2.1em;
-    line-height: 2.4;
+	/*font-size: 2.1em;*/
+	font-size: calc(.8em + 1vw);
+  	line-height: calc(1.2em + 1vw);
+    /*line-height: 2.4;*/
     margin-bottom: 50px;
     letter-spacing: .02em;
 }
@@ -100,18 +107,60 @@ h1, h2, p {
 	margin-top:23px;
 }
 
-.centered-img {
-	text-align: center;
-    max-width: 415px;
-    width: 100%;
-    position: absolute;
-    top: 42%;
-    transform: translateY(-47%);
-    left: 28%;
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 
-.top-img {
+.helper img {
+    background: #3A6F9A;
+    vertical-align: middle;
+    max-height: 25px;
+    max-width: 160px;
+}
 
+
+.arrow-down {
+	width: 100%;
+    position: absolute;
+    top: 67%;
+    transform: translateY(100%);
+}
+
+.arrow-down img {
+	height: 175px;
+    width: 90px;
+    position: absolute;
+    vertical-align: bottom;
+    margin: 0 auto;
+    vertical-align: bottom;
+    position: relative;
+    display: block;
+}
+
+.centered-img {
+    max-width: 415px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.panel1 img {
+	top:100px;
+	position: relative;
+}
+
+.panel1 h1, .panel1 p, .panel1 h2 {
+	position: relative;
+	top: -190px;
+}
+
+.middle-img {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 10vh;
 }
 
 .top-right-img {
@@ -131,7 +180,7 @@ h1, h2, p {
 .inner {
 	position: relative;
 	height:100%;
-	width:60%;
+	width:80%;
 	margin:0 auto;
 }
 .home {
@@ -296,13 +345,20 @@ h1, h2, p {
     transform: rotate(45deg);
 }
 
+@media(max-width: 960px) {
+	.centered-img {
+		left: 0;
+		max-width: 100%;
+	}
+}
+
 @media (max-width:800px) {
-	h1 {
+	/*h1 {
 		font-size:15vw;
 	}
 	h2 {
 		font-size:12vw;
-	}
+	}*/
 	.inner {
 		width:70%;
 
